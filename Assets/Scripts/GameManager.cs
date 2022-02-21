@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,9 +16,19 @@ public class GameManager : MonoBehaviour
     private Vector3 RandomPos;
     public bool GameOver;
 
+    //Variable que accede a TextMeshPro
+    public TextMeshProUGUI ScoreText;
+    private int Score = 0;
+
+    //Panel de GAME OVER
+    public GameObject GameOverPanel;
+
     // Start is called before the first frame update
     void Start()
     {
+        //Accedemos a nuestra UI de puntuación
+        ScoreText.text = $"Score: {Score}";
+        GameOverPanel.SetActive(false);
         StartCoroutine(SpawnRandomTarget());
     }
 
@@ -51,5 +62,17 @@ public class GameManager : MonoBehaviour
             Instantiate(TargetPrefabs[RandomIndex], RandomSpawnPosition(), TargetPrefabs[RandomIndex].transform.rotation);
             TargetPositions.Add(RandomPos);
         }
+    }
+
+    public void UpdateScore(int PointsToAdd)
+    {
+        Score += PointsToAdd;
+        ScoreText.text = $"Score: {Score}";
+    }
+
+    public void IsGameOver()
+    {
+        GameOver = true;
+        GameOverPanel.SetActive(true);
     }
 }

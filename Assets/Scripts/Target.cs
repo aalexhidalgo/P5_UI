@@ -5,6 +5,9 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     private float LifeTime = 2f;
+    [SerializeField] private int Points;
+
+    public ParticleSystem ExplosionParticle;
 
     private GameManager GameManagerScript;
     // Start is called before the first frame update
@@ -23,10 +26,16 @@ public class Target : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Destroy(gameObject);
-        if (gameObject.CompareTag("Bad"))
+        if (!GameManagerScript.GameOver)
         {
-            GameManagerScript.GameOver = true;
+            GameManagerScript.UpdateScore(Points);
+            Instantiate(ExplosionParticle, transform.position, ExplosionParticle.transform.rotation);
+
+            Destroy(gameObject);
+            if (gameObject.CompareTag("Bad"))
+            {
+                GameManagerScript.IsGameOver();
+            }
         }
     }
 
