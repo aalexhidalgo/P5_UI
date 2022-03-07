@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     private float MinY = -3.75f;
     private float DistanceBetweenSquares = 2.5f;
 
-    private float SpawnRate = 2f;
+    public float SpawnRate = 2f;
     private Vector3 RandomPos;
     public bool GameOver;
 
@@ -21,16 +21,16 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI ScoreText;
     private int Score = 0;
 
-    //Panel de GAME OVER
+    //Panel GAME OVER
     public GameObject GameOverPanel;
+
+    //Panel MENU
+    public GameObject MainMenuPanel;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Accedemos a nuestra UI de puntuación
-        ScoreText.text = $"Score: {Score}";
-        GameOverPanel.SetActive(false);
-        StartCoroutine(SpawnRandomTarget());
+        MainMenuPanel.SetActive(true);
     }
 
     // Update is called once per frame
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
             {
                 RandomPos = RandomSpawnPosition();
             }
-            Instantiate(TargetPrefabs[RandomIndex], RandomSpawnPosition(), TargetPrefabs[RandomIndex].transform.rotation);
+            Instantiate(TargetPrefabs[RandomIndex], RandomPos, TargetPrefabs[RandomIndex].transform.rotation);
             TargetPositions.Add(RandomPos);
         }
     }
@@ -79,5 +79,21 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(0);
+    }
+
+    //Iniciamos el juego (dependerá su dificultad)
+    public void StartGame(int Difficulty)
+    {
+        MainMenuPanel.SetActive(false);
+
+        GameOver = false;
+        GameOverPanel.SetActive(false);
+
+        Score= 0;
+        UpdateScore(0);
+
+        SpawnRate = 2f;
+        SpawnRate /= Difficulty;
+        StartCoroutine(SpawnRandomTarget());
     }
 }

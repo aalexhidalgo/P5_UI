@@ -415,6 +415,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &412910302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3294010761714924734, guid: c45a9ce7e3552d144b44768778702892, type: 3}
+  m_PrefabInstance: {fileID: 1351192217}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &412910307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412910302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7899b5f7e1ec249931abce7c73c2ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Difficulty: 1
 --- !u!1 &494445611
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,6 +731,47 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043111703}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1074123829 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3294010761084975090, guid: c45a9ce7e3552d144b44768778702892, type: 3}
+  m_PrefabInstance: {fileID: 1351192217}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1074123830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074123829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7899b5f7e1ec249931abce7c73c2ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Difficulty: 3
+--- !u!1 &1089758059 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3294010761420669141, guid: c45a9ce7e3552d144b44768778702892, type: 3}
+  m_PrefabInstance: {fileID: 1351192217}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1146866272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3294010760974575823, guid: c45a9ce7e3552d144b44768778702892, type: 3}
+  m_PrefabInstance: {fileID: 1351192217}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1146866273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146866272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7899b5f7e1ec249931abce7c73c2ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Difficulty: 2
 --- !u!1001 &1351192217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -857,6 +916,7 @@ MonoBehaviour:
   GameOver: 0
   ScoreText: {fileID: 1889186451}
   GameOverPanel: {fileID: 2038055612}
+  MainMenuPanel: {fileID: 1089758059}
 --- !u!4 &1377152071
 Transform:
   m_ObjectHideFlags: 0
